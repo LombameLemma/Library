@@ -5,4 +5,4 @@ const UserSchema=new mongoose.Schema({
     password:{type:String,required:true},
    role:{type:String,default:"student"}
 },{timestamps:true})
-odule.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);
