@@ -6,5 +6,5 @@ const BookSchema = new mongoose.Schema({
   totalCopies: { type: Number, required: true },
   availableCopies: { type: Number, required: true }
 });
-
+//
 module.exports = mongoose.model("Book", BookSchema);
