@@ -1,5 +1,14 @@
 // 1️⃣ Import dependencies
 //
+const authRouter = require("./routes/auth");
+const booksRouter = require("./routes/books");
+const borrowRouter = require("./routes/borrow");
+
+app.use("/api/auth", authRouter);
+app.use("/api/books", booksRouter);
+app.use("/api/borrow", borrowRouter);
+
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -13,7 +22,8 @@ app.use(cors());
 app.use(express.json());
 
 // 4️⃣ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+//mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://libraryuser:library123@cluster0.gbomscx.mongodb.net/library?retryWrites=true&w=majority")
   .then(() => console.log("✅ MongoDB connected successfully"))
   .catch((err) => console.log("❌ MongoDB connection error:", err));
 
